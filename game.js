@@ -1,9 +1,12 @@
 var config = {
   type: Phaser.AUTO,
-  width: 800,
-  height: 600,
+  /*width: 1920,
+  height: 1080,*/
   scale: {
-    autoCenter: Phaser.Scale.CENTER_BOTH
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+    width: 1920,
+    height: 1080
   },
   scene: {
     preload: preload,
@@ -40,6 +43,29 @@ function create() {
 
   self.add.image(400, 300, 'sky');
 
+  var graphics = self.add.graphics({ fillStyle: { color: 0x0000aa } });
+
+  self.add.text(20, 20, 'FULLSCREEN', { fill: '#FFFFFF' })
+    .setShadow(2, 2, '#000000', 2, false, true)
+    .setInteractive()
+    .on('pointerdown', function () {
+      if (self.scale.isFullscreen) {
+        self.scale.stopFullscreen();
+        this.setText('FULLSCREEN');
+      } else {
+        self.scale.startFullscreen();
+        this.setText('CHIUDERE');
+      }
+    });
+
+  self.add.text(20, 1040, 'CREDITI', { fill: '#FFFFFF' })
+    .setShadow(2, 2, '#000000', 2, false, true)
+    .setInteractive()
+    .on('pointerdown', function () {
+      var rect = new Phaser.Geom.Rectangle(560, 240, 800, 600);
+      graphics.fillRectShape(rect);
+    });
+
   data.characters.forEach(characterData => {
     var character = self.add.sprite(characterData.x, characterData.y, 'brawler').setInteractive();
 
@@ -59,7 +85,7 @@ function create() {
   });
 
   theme = self.sound.add('theme', { loop: true });
-  theme.volume = 0.3;
+  theme.volume = 0.2;
   theme.play();
 }
 
