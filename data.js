@@ -24,5 +24,10 @@ var data = {
     voice: 'semiramide.ogg',
     x: 900,
     y: 450
+  }, {
+    name: 'Didone',
+    voice: 'didone.ogg',
+    x: 1100,
+    y: 400
   }]
 };
