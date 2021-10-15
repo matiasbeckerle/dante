@@ -32,7 +32,7 @@ function preload() {
     self.load.audio(characterData.voice, [`assets/voice/${characterData.voice}`]);
   });
 
-  self.load.image('sky', 'assets/sky.png');
+  self.load.image('background', 'assets/background.png');
   self.load.spritesheet('brawler', 'assets/brawler48x48.png', {
     frameWidth: 48, frameHeight: 48
   });
@@ -41,7 +41,7 @@ function preload() {
 function create() {
   var self = this;
 
-  self.add.image(400, 300, 'sky');
+  self.add.image(960, 540, 'background');
 
   var graphics = self.add.graphics({ fillStyle: { color: 0x0000aa } });
 
