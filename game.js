@@ -22,10 +22,7 @@ var characters = [];
 function preload() {
   var self = this;
 
-  self.load.audio('theme', [
-    'assets/MusicLFiles_-_The_Lament_Of_The_Warfields.ogg',
-    'assets/MusicLFiles_-_The_Lament_Of_The_Warfields.mp3'
-  ]);
+  self.load.audio('theme', ['assets/the_lament_of_the_warfields.ogg']);
 
   // Load voice
   data.characters.forEach(characterData => {
