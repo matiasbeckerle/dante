@@ -18,6 +18,7 @@ var config = {
 var game = new Phaser.Game(config);
 var theme;
 var characters = [];
+var fontFamily = 'Trebuchet MS, Tahoma, Helvetica, sans-serif';
 
 function preload() {
   var self = this;
@@ -45,7 +46,12 @@ function create() {
 
   var graphics = self.add.graphics({ fillStyle: { color: 0x0000aa } });
 
-  self.add.text(20, 20, 'FULLSCREEN', { fill: '#FFFFFF' })
+  self.add.text(20, 20, 'FULLSCREEN', {
+    fontFamily: fontFamily,
+    fontStyle: 'bold',
+    fontSize: 20,
+    fill: '#FFFFFF'
+  })
     .setShadow(2, 2, '#000000', 2, false, true)
     .setInteractive()
     .on('pointerdown', function () {
@@ -58,7 +64,12 @@ function create() {
       }
     });
 
-  self.add.text(20, 1040, 'CREDITI', { fill: '#FFFFFF' })
+  self.add.text(20, 1040, 'CREDITI', {
+    fontFamily: fontFamily,
+    fontStyle: 'bold',
+    fontSize: 20,
+    fill: '#FFFFFF'
+  })
     .setShadow(2, 2, '#000000', 2, false, true)
     .setInteractive()
     .on('pointerdown', function () {
@@ -77,6 +88,13 @@ function create() {
     });
 
     characters.push(character);
+
+    self.add.text(characterData.nameText.x, characterData.nameText.y, characterData.name, {
+      fontFamily: fontFamily,
+      fontStyle: 'bold',
+      fontSize: 24,
+      fill: '#b18f4c'
+    });
   });
 
   theme = self.sound.add('theme', { loop: true });
