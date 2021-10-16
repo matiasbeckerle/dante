@@ -32,10 +32,12 @@ function preload() {
     self.load.audio(characterData.voice, [`assets/voice/${characterData.voice}`]);
   });
 
-  self.load.image('background', 'assets/background.png');
-  self.load.spritesheet('brawler', 'assets/brawler48x48.png', {
-    frameWidth: 48, frameHeight: 48
+  // Load images
+  data.characters.forEach(characterData => {
+    self.load.image(characterData.name, [`assets/characters/${characterData.image}`]);
   });
+
+  self.load.image('background', 'assets/background.png');
 }
 
 function create() {
@@ -67,7 +69,7 @@ function create() {
     });
 
   data.characters.forEach(characterData => {
-    var character = self.add.sprite(characterData.x, characterData.y, 'brawler').setInteractive();
+    var character = self.add.image(characterData.x, characterData.y, characterData.name).setInteractive();
 
     character.on('pointerdown', function () {
       var voice = self.sound.add(characterData.voice);
@@ -77,20 +79,10 @@ function create() {
     characters.push(character);
   });
 
-  self.anims.create({
-    key: 'idle',
-    frames: self.anims.generateFrameNumbers('brawler', { frames: [5, 6, 7, 8] }),
-    frameRate: 8,
-    repeat: -1
-  });
-
   theme = self.sound.add('theme', { loop: true });
   theme.volume = 0.2;
   theme.play();
 }
 
 function update() {
-  characters.forEach(character => {
-    character.anims.play('idle', true);
-  });
 }

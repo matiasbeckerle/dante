@@ -1,33 +1,39 @@
 var data = {
   characters: [{
-    name: 'Elena e Paride',
+    name: 'Elena',
     voice: 'elena-e-paride.ogg',
-    x: 100,
-    y: 450
+    image: 'elena.png',
+    x: 410,
+    y: 684
   }, {
     name: 'Achille',
     voice: 'achille.ogg',
-    x: 300,
-    y: 400
+    image: 'achille.png',
+    x: 200,
+    y: 570
   }, {
     name: 'Isotta',
     voice: 'isotta.ogg',
-    x: 500,
-    y: 450
+    image: 'isotta.png',
+    x: 1400,
+    y: 390
   }, {
     name: 'Minosse',
     voice: 'minosse.ogg',
-    x: 700,
-    y: 400
+    image: 'minosse.png',
+    x: 960,
+    y: 200
   }, {
     name: 'Semiramide',
     voice: 'semiramide.ogg',
-    x: 900,
-    y: 450
+    image: 'semiramide.png',
+    x: 1580,
+    y: 420
   }, {
     name: 'Didone',
     voice: 'didone.ogg',
-    x: 1100,
-    y: 400
+    image: 'didone.png',
+    x: 720,
+    y: 410
   }]
 };
