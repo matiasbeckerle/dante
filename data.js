@@ -35,5 +35,47 @@ var data = {
     image: 'didone.png',
     x: 720,
     y: 410
+  }, {
+    name: 'Cleopatra',
+    voice: 'didone.ogg',
+    image: 'cleopatra.png',
+    x: 1700,
+    y: 250
+  }, {
+    name: 'Francesca',
+    voice: 'didone.ogg',
+    image: 'francesca.png',
+    x: 1180,
+    y: 650
+  }, {
+    name: 'Ginevra',
+    voice: 'didone.ogg',
+    image: 'ginevra.png',
+    x: 370,
+    y: 340
+  }, {
+    name: 'Lancilotto',
+    voice: 'didone.ogg',
+    image: 'lancilotto.png',
+    x: 200,
+    y: 290
+  }, {
+    name: 'Paolo',
+    voice: 'didone.ogg',
+    image: 'paolo.png',
+    x: 1340,
+    y: 640
+  }, {
+    name: 'Paride',
+    voice: 'didone.ogg',
+    image: 'paride.png',
+    x: 680,
+    y: 730
+  }, {
+    name: 'Tristano',
+    voice: 'didone.ogg',
+    image: 'tristano.png',
+    x: 1280,
+    y: 370
   }]
 };
