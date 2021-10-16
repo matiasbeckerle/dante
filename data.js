@@ -43,7 +43,7 @@ var data = {
     y: 250
   }, {
     name: 'Francesca',
-    voice: 'didone.ogg',
+    voice: 'francesca.ogg',
     image: 'francesca.png',
     x: 1180,
     y: 650
@@ -73,7 +73,7 @@ var data = {
     y: 730
   }, {
     name: 'Tristano',
-    voice: 'didone.ogg',
+    voice: 'tristano.ogg',
     image: 'tristano.png',
     x: 1280,
     y: 370
