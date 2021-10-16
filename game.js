@@ -38,6 +38,7 @@ function preload() {
   });
 
   self.load.image('background', 'assets/background.png');
+  self.load.image('shadow', 'assets/shadow.png');
 }
 
 function create() {
@@ -69,6 +70,8 @@ function create() {
     });
 
   data.characters.forEach(characterData => {
+    self.add.image(characterData.shadow.x, characterData.shadow.y, 'shadow');
+
     var character = self.add.image(characterData.x, characterData.y, characterData.name).setInteractive();
 
     character.on('pointerdown', function () {
