@@ -87,6 +87,14 @@ function create() {
       voice.play();
     });
 
+    character.on('pointerover', function () {
+      character.alpha = 0.7;
+    });
+
+    character.on('pointerout', function () {
+      character.alpha = 1;
+    });
+
     characters.push(character);
 
     self.add.text(characterData.nameText.x, characterData.nameText.y, characterData.name, {
