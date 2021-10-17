@@ -1,7 +1,5 @@
 var config = {
   type: Phaser.AUTO,
-  /*width: 1920,
-  height: 1080,*/
   scale: {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
@@ -19,18 +17,17 @@ var game = new Phaser.Game(config);
 var theme;
 var characters = [];
 var fontFamily = 'Trebuchet MS, Tahoma, Helvetica, sans-serif';
+var playingVoice;
 
 function preload() {
   var self = this;
 
   self.load.audio('theme', ['assets/the_lament_of_the_warfields.ogg']);
 
-  // Load voice
   data.characters.forEach(characterData => {
     self.load.audio(characterData.voice, [`assets/voice/${characterData.voice}`]);
   });
 
-  // Load images
   data.characters.forEach(characterData => {
     self.load.image(characterData.name, [`assets/characters/${characterData.image}`]);
   });
@@ -83,8 +80,12 @@ function create() {
     var character = self.add.image(characterData.x, characterData.y, characterData.name).setInteractive();
 
     character.on('pointerdown', function () {
-      var voice = self.sound.add(characterData.voice);
-      voice.play();
+      if (playingVoice) {
+        playingVoice.stop();
+      }
+
+      playingVoice = self.sound.add(characterData.voice);
+      playingVoice.play();
     });
 
     character.on('pointerover', function () {
