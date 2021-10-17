@@ -43,7 +43,7 @@ function create() {
 
   var graphics = self.add.graphics({ fillStyle: { color: 0x0000aa } });
 
-  self.add.text(20, 20, 'FULLSCREEN', {
+  self.add.text(20, 20, 'SCHERMO PIENO', {
     fontFamily: fontFamily,
     fontStyle: 'bold',
     fontSize: 20,
@@ -54,7 +54,7 @@ function create() {
     .on('pointerdown', function () {
       if (self.scale.isFullscreen) {
         self.scale.stopFullscreen();
-        this.setText('FULLSCREEN');
+        this.setText('SCHERMO PIENO');
       } else {
         self.scale.startFullscreen();
         this.setText('CHIUDERE');
