@@ -49,7 +49,7 @@ var data = {
     nameText: { x: 684, y: 280 }
   }, {
     name: 'Cleopatra',
-    voice: 'didone.ogg',
+    voice: 'cleopatra.ogg',
     image: 'cleopatra.png',
     x: 1700,
     y: 250,
@@ -89,7 +89,7 @@ var data = {
     nameText: { x: 1310, y: 500 }
   }, {
     name: 'Paride',
-    voice: 'didone.ogg',
+    voice: 'elena-e-paride.ogg',
     image: 'paride.png',
     x: 680,
     y: 730,

@@ -16,6 +16,7 @@ var config = {
 var game = new Phaser.Game(config);
 var theme;
 var characters = [];
+var tweens = {};
 var fontFamily = 'Trebuchet MS, Tahoma, Helvetica, sans-serif';
 var playingVoice;
 
@@ -61,7 +62,7 @@ function create() {
       }
     });
 
-  self.add.text(20, 1040, 'CREDITI', {
+  /*self.add.text(20, 1040, 'CREDITI', {
     fontFamily: fontFamily,
     fontStyle: 'bold',
     fontSize: 20,
@@ -72,20 +73,40 @@ function create() {
     .on('pointerdown', function () {
       var rect = new Phaser.Geom.Rectangle(560, 240, 800, 600);
       graphics.fillRectShape(rect);
-    });
+    });*/
 
   data.characters.forEach(characterData => {
     self.add.image(characterData.shadow.x, characterData.shadow.y, 'shadow');
 
     var character = self.add.image(characterData.x, characterData.y, characterData.name).setInteractive();
 
-    character.on('pointerdown', function () {
+    tweens[characterData.name] = self.tweens.add({
+      targets: character,
+      scaleX: 1.05,
+      scaleY: 1.05,
+      ease: 'Sine.easeInOut',
+      duration: 1000,
+      repeat: -1,
+      yoyo: true,
+      paused: true
+    });
+
+    character.on('pointerdown', function (a, b, c, d) {
       if (playingVoice) {
         playingVoice.stop();
       }
 
+      var activeTween = Object.keys(tweens).filter(function (row) {
+        return tweens[row].paused === false;
+      });
+
+      if (activeTween && activeTween.length === 1) {
+        tweens[activeTween].pause();
+      }
+
       playingVoice = self.sound.add(characterData.voice);
       playingVoice.play();
+      tweens[character.texture.key].resume();
     });
 
     character.on('pointerover', function () {
