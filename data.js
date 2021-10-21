@@ -64,24 +64,8 @@ var data = {
     shadow: { x: 1186, y: 750 },
     nameText: { x: 1124, y: 510 }
   }, {
-    name: 'Ginevra',
-    voice: 'didone.ogg',
-    image: 'ginevra.png',
-    x: 370,
-    y: 340,
-    shadow: { x: 380, y: 440 },
-    nameText: { x: 330, y: 200 }
-  }, {
-    name: 'Lancilotto',
-    voice: 'didone.ogg',
-    image: 'lancilotto.png',
-    x: 200,
-    y: 290,
-    shadow: { x: 192, y: 380 },
-    nameText: { x: 150, y: 160 }
-  }, {
     name: 'Paolo',
-    voice: 'didone.ogg',
+    voice: 'paolo.ogg',
     image: 'paolo.png',
     x: 1340,
     y: 640,

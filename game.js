@@ -62,7 +62,7 @@ function create() {
       }
     });
 
-  /*self.add.text(20, 1040, 'CREDITI', {
+  self.add.text(20, 1040, 'CREDITI', {
     fontFamily: fontFamily,
     fontStyle: 'bold',
     fontSize: 20,
@@ -71,9 +71,8 @@ function create() {
     .setShadow(2, 2, '#000000', 2, false, true)
     .setInteractive()
     .on('pointerdown', function () {
-      var rect = new Phaser.Geom.Rectangle(560, 240, 800, 600);
-      graphics.fillRectShape(rect);
-    });*/
+      window.open('https://github.com/matiasbeckerle/dante#credits', '_blank');
+    });
 
   data.characters.forEach(characterData => {
     self.add.image(characterData.shadow.x, characterData.shadow.y, 'shadow');
