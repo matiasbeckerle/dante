@@ -127,7 +127,7 @@ function create() {
   });
 
   theme = self.sound.add('theme', { loop: true });
-  theme.volume = 0.2;
+  theme.volume = 0.1;
   theme.play();
 }
 
